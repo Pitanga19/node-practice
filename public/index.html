@@ -1,0 +1,27 @@
+<!-- node-practice/public/index.html -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Chat</h1>
+
+    <!-- Formulario para el nuevo mensaje -->
+    <form id="message-form" class="input-container">
+        <input id="message-input" type="text" placeholder="Escribe un mensaje..." />
+        <button type="submit">Enviar</button>
+    </form>
+
+    <!-- Lista de mensajes -->
+    <ul id="messages-list"></ul>
+
+    <!-- Enlace a tu archivo de JS -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/Script.js"></script>
+</body>
+</html>
