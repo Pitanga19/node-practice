@@ -3,9 +3,9 @@
 import MessageModel from "../models/messageModel";
 
 class MessageService {
-    static async create(content: string): Promise<MessageModel> {
+    static async create(content: string, userId: number): Promise<MessageModel> {
         try {
-            const message = await MessageModel.create({ content: content });
+            const message = await MessageModel.create({ content: content, userId: userId });
             return message;
         } catch (error) {
             throw new Error('Error creating message');

@@ -1,17 +1,16 @@
-// node-practice/src/models/messageModel.ts
+// node-practice/src/models/userModel.ts
 
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '../../db/sequelize';
 
-class MessageModel extends Model {
+class UserModel extends Model {
     public id!: number;
-    public content!: string;
-    public userId!: number;
+    public username!: string;
     public createdAt!: Date;
     public updatedAt!: Date;
 };
 
-MessageModel.init(
+UserModel.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -20,17 +19,14 @@ MessageModel.init(
         },
         content: {
             type: DataTypes.STRING,
-            allowNull: false,
-        },
-        userId: {
-            type: DataTypes.INTEGER,
+            // unique: true, // not now
             allowNull: false,
         },
     },
     {
         sequelize,
-        tableName: 'messages',
+        tableName: 'users',
     },
 );
 
-export default MessageModel
+export default UserModel;
