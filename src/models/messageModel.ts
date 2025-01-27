@@ -2,6 +2,7 @@
 
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '../../db/sequelize';
+import UserModel from './userModel';
 
 class MessageModel extends Model {
     public id!: number;
@@ -9,6 +10,7 @@ class MessageModel extends Model {
     public userId!: number;
     public createdAt!: Date;
     public updatedAt!: Date;
+    public user?: UserModel;
 };
 
 MessageModel.init(
@@ -32,5 +34,7 @@ MessageModel.init(
         tableName: 'messages',
     },
 );
+
+MessageModel.belongsTo(UserModel, { foreignKey: 'userId', as: 'user' });
 
 export default MessageModel

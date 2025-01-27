@@ -24,6 +24,19 @@ class UserService {
         };
     };
 
+    static async getOrCreateByUsername(username: string): Promise<UserModel> {
+        try {
+            const user = await UserModel.findOne({ where: { username } });
+            if (!user) {
+                const user = await UserModel.create({ username: username });
+                return user;
+            }
+            return user;
+        } catch (error) {
+            throw new Error('Error getting or creating by username');
+        }
+    };
+
     static async getAll(): Promise<UserModel[]> {
         try {
             const users = await UserModel.findAll();

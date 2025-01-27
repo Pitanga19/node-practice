@@ -17,7 +17,7 @@ UserModel.init(
             autoIncrement: true,
             primaryKey: true,
         },
-        content: {
+        username: {
             type: DataTypes.STRING,
             // unique: true, // not now
             allowNull: false,

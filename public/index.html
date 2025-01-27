@@ -1,5 +1,5 @@
 <!-- node-practice/public/index.html -->
- 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +11,14 @@
 <body>
     <h1>Chat</h1>
 
-    <!-- Formulario para el nuevo mensaje -->
-    <form id="message-form" class="input-container">
+    <!-- Formulario para registrar el nombre de usuario -->
+    <form id="username-form" class="input-container">
+        <input id="username-input" type="text" placeholder="Ingresa tu nombre de usuario..." />
+        <button type="submit">Guardar</button>
+    </form>
+
+    <!-- Formulario para enviar mensajes -->
+    <form id="message-form" class="input-container" style="display: none;">
         <input id="message-input" type="text" placeholder="Escribe un mensaje..." />
         <button type="submit">Enviar</button>
     </form>
@@ -22,6 +28,6 @@
 
     <!-- Enlace a tu archivo de JS -->
     <script src="/socket.io/socket.io.js"></script>
-    <script src="/js/Script.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>
